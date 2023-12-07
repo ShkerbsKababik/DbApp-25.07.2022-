@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0067: Событие "Command.CanExecuteChanged" никогда не используется.
+dotnet_diagnostic.CS0067.severity = none

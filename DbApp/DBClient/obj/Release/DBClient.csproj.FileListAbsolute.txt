@@ -1,0 +1,16 @@
+C:\Users\vovan\source\repos\DBClient\bin\Release\DBClient.exe.config
+C:\Users\vovan\source\repos\DBClient\bin\Release\DBClient.exe
+C:\Users\vovan\source\repos\DBClient\bin\Release\DBClient.pdb
+C:\Users\vovan\source\repos\DBClient\obj\Release\DBClient.csproj.AssemblyReference.cache
+C:\Users\vovan\source\repos\DBClient\obj\Release\DBClient.csproj.SuggestedBindingRedirects.cache
+C:\Users\vovan\source\repos\DBClient\obj\Release\MainWindow.g.cs
+C:\Users\vovan\source\repos\DBClient\obj\Release\App.g.cs
+C:\Users\vovan\source\repos\DBClient\obj\Release\DBClient_MarkupCompile.cache
+C:\Users\vovan\source\repos\DBClient\obj\Release\DBClient_MarkupCompile.lref
+C:\Users\vovan\source\repos\DBClient\obj\Release\MainWindow.baml
+C:\Users\vovan\source\repos\DBClient\obj\Release\DBClient.g.resources
+C:\Users\vovan\source\repos\DBClient\obj\Release\DBClient.Properties.Resources.resources
+C:\Users\vovan\source\repos\DBClient\obj\Release\DBClient.csproj.GenerateResource.cache
+C:\Users\vovan\source\repos\DBClient\obj\Release\DBClient.csproj.CoreCompileInputs.cache
+C:\Users\vovan\source\repos\DBClient\obj\Release\DBClient.exe
+C:\Users\vovan\source\repos\DBClient\obj\Release\DBClient.pdb

@@ -1,0 +1,184 @@
+﻿<Window x:Class="DBClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DBClient"
+        xmlns:viewModel="clr-namespace:DBClient.ViewModels"
+        mc:Ignorable="d"
+        Title="DBClient" Height="450" Width="800">
+    <Window.DataContext>
+        <viewModel:ViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0" x:Name="slide_1"/>
+            <RowDefinition Height="*" x:Name="slide_2"/>
+        </Grid.RowDefinitions>
+
+
+        <!--slide_0-->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="240"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--Autorization_Form-->
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center" Width="130">
+                <Label HorizontalAlignment="Center">
+                    name :
+                </Label>
+                <TextBox x:Name="autorization_name" Text="{Binding viewData.Name}"/>
+                <Label HorizontalAlignment="Center">
+                    password :
+                </Label >
+                <TextBox x:Name="autorization_password" Text="{Binding viewData.Password}">
+
+                </TextBox>
+                <Label HorizontalAlignment="Center">
+                    serv-ip :
+                </Label >
+                <TextBox Text="{Binding viewData.IP}">
+
+                </TextBox>
+                <Label HorizontalAlignment="Center">
+                    serv-port :
+                </Label >
+                <TextBox Text="{Binding viewData.Port}">
+
+                </TextBox>
+                <Label HorizontalAlignment="Center" Content="{Binding viewData.Console}">
+                </Label >
+                <Button x:Name="autorization_submit" Command="{Binding AutorizationCommand}">
+                    Submit
+                </Button>
+            </StackPanel>
+        </Grid>
+
+
+        <!--slide_2-->
+        <TabControl Grid.Row="1" TabStripPlacement="Left">
+            <!--TabItem_1_Open-->
+            <TabItem>
+                <TabItem.Header>
+                    <Label>Open Files</Label>
+                </TabItem.Header>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="240"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!--Open_File_Form-->
+                    <StackPanel Grid.Row="1" HorizontalAlignment="Center" Width="200">
+                        <!--ComboBox-->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <Label HorizontalAlignment="Center" Height="30" Width="60">
+                                sourse :
+                            </Label>
+                            <ComboBox Height="30" Width="140" >
+                                <ComboBoxItem IsSelected="True">
+                                    <Label>
+                                        open local
+                                    </Label>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <Label>
+                                        open server
+                                    </Label>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <Label>
+                                        open new
+                                    </Label>
+                                </ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+                        <!--NameBox-->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <Label HorizontalAlignment="Center" Height="30" Width="60">
+                                name :
+                            </Label>
+                            <TextBox Height="30" Width="140" Text="{Binding viewData.TableName}">
+
+                            </TextBox>
+                        </StackPanel>
+                        <!--Submit-->
+                        <StackPanel>
+                            <Label HorizontalAlignment="Center" Height="30" Content="{Binding viewData.Console}" />
+                            <Button Height="30" Command="{Binding OpenCommand}" >
+                                submit
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <!--TabItem_2_Redact-->
+            <TabItem >
+                <TabItem.Header>
+                    <Label>Redact</Label>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TabControl Grid.Row="0" ItemsSource="{Binding tableSlides}">
+
+                    </TabControl>
+                </Grid>
+            </TabItem>
+            <!--TabItem_3_Settings-->
+            <TabItem>
+                <TabItem.Header>
+                    <Label>Settings</Label>
+                </TabItem.Header>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="240"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!--Open_File_Form-->
+                    <StackPanel Grid.Row="1" HorizontalAlignment="Center" Width="200">
+                        <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Center" Margin="0,0,0,10">
+                            <Label HorizontalAlignment="Center" Width="70">
+                                serv-ip :
+                            </Label >
+                            <TextBox Width="130" Text="{Binding viewData.IP}">
+
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Center" Margin="0,0,0,10">
+                            <Label HorizontalAlignment="Center" Width="70">
+                                serv-port :
+                            </Label >
+                            <TextBox Width="130" Text="{Binding viewData.Port}">
+
+                            </TextBox>
+                        </StackPanel>
+                        <Label HorizontalAlignment="Center" Margin="0,0,0,10">
+                            check all !
+                        </Label >
+                        <Button Height="25">
+                            Submit
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <!--TabItem_3_Logger-->
+            <TabItem>
+                <TabItem.Header>
+                    <Label>Changes</Label>
+                </TabItem.Header>
+                <Grid>
+                    <ScrollViewer>
+
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+
+    </Grid>
+</Window>
